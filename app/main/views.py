@@ -1,12 +1,12 @@
 
 from flask import render_template,request,redirect,url_for
 from pip import main
-from .import app
-from ..requests import get_news,get_news,search_news
-from ..model import Review
-from .forms import ReviewForm
+from .import main
+from ..requests import get_news,search_news,get_articles
 
-Review = Review.Review
+
+
+
 
 
 
@@ -22,7 +22,7 @@ def index():
     # Getting popular news
     general_news = get_news('general')
     business_news = get_news('business')
-    politics_news = get_news('politics')
+    political_news = get_news('political')
 
     title = 'Home - Welcome to The best news Review Website Online'
 
@@ -31,9 +31,9 @@ def index():
     if search_news:
         return redirect(url_for('.index')('search',news_name=search_news))
     else:
-        return render_template('index.html', general = general_news,business = business_news,politics = politics_news )
+        return render_template('index.html', general = general_news,business = business_news,politics = political_news )
     
-@app.route('/news/<int:id>')
+@main.route('/news/<int:id>')
 def news(id):
 
     '''
@@ -44,7 +44,7 @@ def news(id):
     reviews = Review.get_reviews(news.id)
     return render_template('movie.html',title = title,news = news,reviews = reviews)
 
-@app.route('/search/<news_name>')
+@main.route('/search/<news_name>')
 def search(news_name):
     '''
     View function to display the search results
@@ -55,7 +55,7 @@ def search(news_name):
     title = f'search results for {news_name}'
     return render_template('search.html',news = searched_news)
 
-@app.route('/news/review/new/<int:id>', methods = ['GET','POST'])
+@main.route('/news/review/new/<int:id>', methods = ['GET','POST'])
 def new_review(id):
     form = ReviewForm()
     news = get_news(id)

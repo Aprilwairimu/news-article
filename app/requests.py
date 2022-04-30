@@ -1,7 +1,7 @@
 # from app import app
 
 import urllib.request,json
-from model import Article,News
+from app.models import Article,News
 import os
 
 
@@ -113,12 +113,12 @@ def process_article_results(article_list):
         name = article_item.get('name')
         title = article_item.get('title')
         description = article_item.get('description')
-        poster = article_item.get('poster_path')
+        
        
 
-        if poster:
-            article_object = article_list(id,name,description,poster,)
-            article_results.append(article_object)
+        
+        article_object = article_list(id,name,description)
+        article_results.append(article_object)
 
     return article_results
 
