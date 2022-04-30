@@ -3,7 +3,7 @@
 import urllib.request,json
 from app.models import Article,News
 import os
-
+import requests
 
 
 # Getting api key

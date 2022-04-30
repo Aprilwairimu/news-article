@@ -11,6 +11,8 @@ from ..requests import get_news,search_news,get_articles
 
 
 
+
+
 # Views
 @main.route('/')
 def index():
@@ -41,8 +43,8 @@ def news(id):
     '''
     movie = get_news(id)
     title = f'{news.title}'
-    reviews = Review.get_reviews(news.id)
-    return render_template('movie.html',title = title,news = news,reviews = reviews)
+    # reviews = Review.get_reviews(news.id)
+    return render_template('movie.html',title = title,news = news)
 
 @main.route('/search/<news_name>')
 def search(news_name):
@@ -55,20 +57,20 @@ def search(news_name):
     title = f'search results for {news_name}'
     return render_template('search.html',news = searched_news)
 
-@main.route('/news/review/new/<int:id>', methods = ['GET','POST'])
-def new_review(id):
-    form = ReviewForm()
-    news = get_news(id)
+# @main.route('/news/review/new/<int:id>', methods = ['GET','POST'])
+# def new_review(id):
+#     # form = ReviewForm()
+#     news = get_news(id)
 
-    if form.validate_on_submit():
-        title = form.title.data
-        review = form.review.data
-        new_review = Review(news.id,title,news.poster,review)
-        new_review.save_review()
-        return redirect(url_for('main.new_review')('news',id = news.id ))
+#     if form.validate_on_submit():
+#         title = form.title.data
+#         review = form.review.data
+#         new_review = Review(news.id,title,news.poster,review)
+#         new_review.save_review()
+#         return redirect(url_for('main.new_review')('news',id = news.id ))
 
-    title = f'{news.title} review'
-    return render_template('new_review.html',title = title, review_form=form, news=news)
+#     title = f'{news.title} review'
+#     return render_template('new_review.html',title = title, review_form=form, news=news)
 
 
 
