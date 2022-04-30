@@ -3,7 +3,7 @@ from flask import render_template,request,redirect,url_for
 from pip import main
 from .import app
 from ..requests import get_news,get_news,search_news
-from ..models import Review
+from ..model import Review
 from .forms import ReviewForm
 
 Review = Review.Review
