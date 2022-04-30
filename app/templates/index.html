@@ -1,0 +1,46 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    {% if title %}
+    <title> {{ title }}</title>
+    {% else %}
+    <title> Welcome to the best Movie Review website </title>
+    {% endif %}
+</head>
+
+<body>
+    {% block content %}
+
+    <div class="container">
+        <form>
+            <input type="text" name="movie_query" placeholder="Search for a Movie" class="form-control">
+            <input type="submit" value="Submit" class="btn btn-default">
+        </form>
+
+    </div>
+
+    <!-- Popular movie -->
+    <h3> Popular Movies</h3>
+    <ul>
+        {{ macro.displayMovieList(popular)}}
+    </ul>
+    <!-- Upcoming movie  -->
+    <h3> Upcoming Movies </h3>
+    <ul>
+        {{ macro.displayMovieList(upcoming)}}
+    </ul>
+    <!-- Now showing movie -->
+    <h3>Now Showing</h3>
+    <ul>
+        {{ macro.displayMovieList(now_showing)}}
+    </ul>
+
+    {% endblock%}
+</body>
+
+</html>
