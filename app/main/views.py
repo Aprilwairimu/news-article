@@ -5,14 +5,6 @@ from .import main
 from ..requests import get_news,search_news,get_articles
 
 
-
-
-
-
-
-
-
-
 # Views
 @main.route('/')
 def index():

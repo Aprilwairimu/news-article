@@ -27,17 +27,17 @@
     <!-- Popular movie -->
     <h3> General News</h3>
     <ul>
-        {{ macro.displayNewsList(popular)}}
+        {{ macro.display_new_sources(general)}}
     </ul>
     <!-- Upcoming movie  -->
     <h3> Business News </h3>
     <ul>
-        {{ macro.displayNewsList(upcoming)}}
+        {{ macro.display_new_sources(Business)}}
     </ul>
     <!-- Now showing movie -->
     <h3>Political News</h3>
     <ul>
-        {{ macro.displayNewsList(now_showing)}}
+        {{ macro.display_new_sources(Political)}}
     </ul>
 
     {% endblock%}
