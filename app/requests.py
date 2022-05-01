@@ -1,11 +1,14 @@
 import urllib.request,json
-from .models import Articles,Sources
+from .models import Article,Sources
 import os
 import requests
+
+
 api_key = None
 s_url = None
 art_url = None
 articles_url=None
+
 def configure_request(app):
     global api_key,s_url,art_url,articles_url
     api_key = app.config['NEWS_API_KEY']
@@ -17,11 +20,12 @@ def get_sources(category):
     """
     function that gets response from the api call
     """
-    sources_url = s_url.format(category,api_key)
+    sources_url =s_url.format(category,api_key)
     with urllib.request.urlopen(sources_url) as url:
 
         sources_data = url.read()
-        response = json.loads(sources_data)        
+        response = json.loads(sources_data) 
+               
         sources_outcome = None        
         if response['sources']:
             sources_outcome_items = response['sources']
@@ -65,7 +69,7 @@ def process_new_articles(articles_list):
         url = one_article.get("url")
         urlToImage = one_article.get("urlToImage")
         publishedAt = one_article.get("publishedAt")
-        new_article = Articles(source, author, title, description, url, urlToImage, publishedAt)
+        new_article = Article(source, author, title, description, url, urlToImage, publishedAt)
         articles_outcome.append(new_article)    
     return articles_outcome
 
@@ -90,7 +94,7 @@ def process_articles_source(article_list):
         url = art.get('url')
         urlToImage = art.get('urlToImage')
         publishedAt = art.get('publishedAt')        
-        article_object = Articles(source,author,title,description,url,urlToImage,publishedAt)
+        article_object = Article(source,author,title,description,url,urlToImage,publishedAt)
         source_articles.append(article_object)
     return source_articles
 def search_articles(article_name):

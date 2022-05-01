@@ -1,46 +1,34 @@
 {% extends 'base.html'%}
 {% import 'macros.html' as macro%}
 
-<!DOCTYPE html>
-<html>
 
-<head>
-    <meta charset="utf-8">
-    {% if title %}
-    <title> {{ title }}</title>
-    {% else %}
-    <title> Welcome to the best News Article website </title>
-    {% endif %}
-</head>
 
-<body>
+
     {% block content %}
 
     <div class="container">
-        <form>
+        <!-- General News -->
+        <h3> General News</h3>
+        <ul>
+            {{ macro.display_new_sources(General)}}
+        </ul>
+        <!--  Business News -->
+        <h3> Business News </h3>
+        <ul>
+            {{ macro.display_new_sources(Business)}}
+        </ul>
+        <!--Business News -->
+        <h3>Political News</h3>
+        <ul>
+            {{ macro.display_new_sources(Political)}}
+        </ul>
+
+        <!-- <form>
             <input type="text" name="news_query" placeholder="Search for a News" class="form-control">
             <input type="submit" value="Submit" class="btn btn-default">
-        </form>
+        </form> -->
 
     </div>
 
-    <!-- Popular movie -->
-    <h3> General News</h3>
-    <ul>
-        {{ macro.display_new_sources(general)}}
-    </ul>
-    <!-- Upcoming movie  -->
-    <h3> Business News </h3>
-    <ul>
-        {{ macro.display_new_sources(Business)}}
-    </ul>
-    <!-- Now showing movie -->
-    <h3>Political News</h3>
-    <ul>
-        {{ macro.display_new_sources(Political)}}
-    </ul>
-
+   
     {% endblock%}
-</body>
-
-</html>

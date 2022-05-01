@@ -49,9 +49,9 @@ from unittest import result
 from urllib import response
 
 
-class News:
+class Sources:
     '''
-     News class to define Movie Objects
+     News class to define Sources Objects
     '''
 
     def __init__(self,news_id,name,description,url,):
@@ -63,35 +63,35 @@ class News:
 
 
 
-class NewsReview:
+class SourcesReview:
 
     all_reviews = []
 
     def __init__(self,news_id,name,imageurl,review):
-        self.movie_id = news_id
+        self.news_id = news_id
         self.name = name
         self.imageurl = imageurl
         self.review = review
 
 
     def save_review(self):
-        NewsReview.news_reviews.append(self)
+        SourcesReview.news_reviews.append(self)
 
 
     @classmethod
     def clear_reviews(cls):
-       NewsReview.news_reviews.clear()
+       SourcesReview.news_reviews.clear()
 
     @classmethod
     def get_reviews(cls,id):
 
-        news_response = []
+        Sources_response = []
 
         for review in cls.all_reviews:
             if review.news_id == id:
-                news_response.append(review)
+                Sources_response.append(review)
 
-        return news_response
+        return Sources_response
 
 
 
