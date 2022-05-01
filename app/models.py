@@ -1,138 +1,70 @@
-class Article:
-    """Article class to define Article objects
-    """
-    def __init__(self,source,Author,title,description,url,urlToImage,publishedAt):
-        self.source =source
-        self.Author = Author
+class Articles:
+    '''
+    Article class to define Class Objects
+    '''  
+    def __init__(self, source, author, title, description, url, urlToImage, publishedAt):        
+        self.source = source
+        self.author = author
         self.title = title
         self.description = description
         self.url = url
-        self.urlToImage = urlToImage 
+        self.urlToImage= urlToImage
         self.publishedAt = publishedAt
+class ArticleReview:    
+    articles_reviews = []   
 
-
-
-class ArticleReview:
-
-    all_reviews = []
-
-    def __init__(self,title,imageurl,review):
+    def __init__(self,title,urlToImage,review):
         self.title = title
-        self.imageurl = imageurl
-        self.review = review
+        self.urlToImage = urlToImage
+        self.review = review 
 
+    def save_artcles_review(self):
+        ArticleReview.articles_reviews.append(self) 
 
-    def save_review(self):
-        ArticleReview.articles_reviews.append(self)
+@classmethod
+def clear_articles_reviews(cls):
+    ArticleReview.articles_reviews.clear() 
 
-
-    @classmethod
-    def clear_reviews(cls):
-        ArticleReview.articles_reviews.clear()
-
-    @classmethod
-    def get_reviews(cls,title):
-
-        article_response = []
-
-        for review in cls.articles_reviews:
-            if review.title == title:
-                article_response.append(review)
-
-        return article_response
-
-
-
-
-from re import U
-from unittest import result
-from urllib import response
-
+@classmethod
+def get_articles_reviews(cls,title):        
+    article_results = []        
+    for review in cls.articles_reviews:
+        if review.title== title:
+            article_results.append(review)        
+    return article_results
 
 class Sources:
     '''
-     News class to define Sources Objects
-    '''
-
-    def __init__(self,news_id,name,description,url,):
-        self.id =news_id
+    News class to define News Objects
+    ''' 
+    def __init__(self,id,name,description,url,category,language,country):
+        self.id = id
         self.name = name
         self.description = description
-        self.url= url 
-        
+        self.url = url
+        self.category = category
+        self.language = language
+        self.country = country
 
+class SourcesReview:    
+    source_reviews = []    
+    def __init__(self,id,title,url,review):
+        self.id = id
+        self.title = title
+        self.url = url
+        self.review = review 
 
+    def save_sources_review(self):
+        SourcesReview.source_reviews.append(self)  
 
-class SourcesReview:
+@classmethod
+def clear_source_reviews(cls):
+    SourcesReview.source_reviews.clear() 
 
-    all_reviews = []
-
-    def __init__(self,news_id,name,imageurl,review):
-        self.news_id = news_id
-        self.name = name
-        self.imageurl = imageurl
-        self.review = review
-
-
-    def save_review(self):
-        SourcesReview.news_reviews.append(self)
-
-
-    @classmethod
-    def clear_reviews(cls):
-       SourcesReview.news_reviews.clear()
-
-    @classmethod
-    def get_reviews(cls,id):
-
-        Sources_response = []
-
-        for review in cls.all_reviews:
-            if review.news_id == id:
-                Sources_response.append(review)
-
-        return Sources_response
-
-
-
-
-
-
-# import unittest
-# from app.main.views import news
-# from app.models import article_models
-# from app.models import news_models
-# News = news.News
-
-# class NewsTest(unittest.TestCase):
-#     '''
-#     Test Class to test the behaviour of the News class
-#     '''
-
-#     def setUp(self):
-#         '''
-#         Set up method that will run before every Test
-#         '''
-#         self.new_news = news_models(1234,'Python Must Be Crazy','A thrilling new Python Series','https://image.tmdb.org/t/p/w500/khsjha27hbs',8.5,129993)
-
-#     def test_instance(self):
-#         self.assertTrue(isinstance(self.new_news,news_models))
-
-
-# class ArticalTest(unittest.TestCase):
-#     '''
-#     Test Class to test the behaviour of the News class
-#     '''
-
-#     def setUp(self):
-#         '''
-#         Set up method that will run before every Test
-#         '''
-#         self.new_Article = article_models(1234,'Python Must Be Crazy','A thrilling new Python Series','https://image.tmdb.org/t/p/w500/khsjha27hbs',8.5,129993)
-
-#     def test_instance(self):
-#         self.assertTrue(isinstance(self.new_Article,article_models.Article))
-
-
-# if __name__ == '__main__':
-#     unittest.main()
+@classmethod
+def get_source_reviews(cls,id):        
+        source_results = []        
+        for review in cls.source_reviews:
+            if review.id == id:
+                source_results.append(review)        
+        return source_results

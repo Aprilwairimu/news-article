@@ -1,5 +1,5 @@
 import urllib.request,json
-from .models import Article,Sources
+from .models import Articles,Sources
 import os
 import requests
 
@@ -25,7 +25,7 @@ def get_sources(category):
 
         sources_data = url.read()
         response = json.loads(sources_data) 
-               
+
         sources_outcome = None        
         if response['sources']:
             sources_outcome_items = response['sources']
@@ -69,7 +69,7 @@ def process_new_articles(articles_list):
         url = one_article.get("url")
         urlToImage = one_article.get("urlToImage")
         publishedAt = one_article.get("publishedAt")
-        new_article = Article(source, author, title, description, url, urlToImage, publishedAt)
+        new_article = Articles(source, author, title, description, url, urlToImage, publishedAt)
         articles_outcome.append(new_article)    
     return articles_outcome
 
@@ -94,7 +94,7 @@ def process_articles_source(article_list):
         url = art.get('url')
         urlToImage = art.get('urlToImage')
         publishedAt = art.get('publishedAt')        
-        article_object = Article(source,author,title,description,url,urlToImage,publishedAt)
+        article_object = Articles(source,author,title,description,url,urlToImage,publishedAt)
         source_articles.append(article_object)
     return source_articles
 def search_articles(article_name):

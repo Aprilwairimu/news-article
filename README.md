@@ -23,9 +23,9 @@ The technologies are ;
 
 :small_blue_diamond: HTML
 
-:small_blue_diamond: CSS
-
 :small_blue_diamond: BOOSTRAP
+
+:small_blue_diamond: FLASK
 
 :small_blue_diamond: PYTHON
 

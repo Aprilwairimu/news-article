@@ -20,27 +20,35 @@ def index():
 
     return render_template('index.html', general = general_news,business = business_news,politics = political_news )
     
-# @main.route('/news/<int:id>')
-# def news(id):
+@main.route('/articles/<id>')
+def sourceArticles(id):
+    all_articles = articles_source(id)
+    print(all_articles)
+    source = id
+    return render_template('sourcearticles.html', articles = all_articles, source = source)
 
-#     '''
-#     View movie page function that returns the movie details page and its data
-#     '''
-#     movie = get_sources(id)
-#     title = f'{news.title}'
-#     # reviews = Review.get_reviews(news.id)
-#     return render_template('movie.html',title = title,news = news)
 
-# @main.route('/search/<news_name>')
-# def search(news_name):
-#     '''
-#     View function to display the search results
-#     '''
-#     news_name_list = news_name.split(" ")
-#     news_name_format = "+".join(news_name_list)
-#     searched_news = search_news(news_name_format)
-#     title = f'search results for {news_name}'
-#     return render_template('search.html',news = searched_news)
+# @main.route('/News-Articles')
+# def NewsArticles():
+#     """
+#     View that would return news articles
+     
+#     """
+#     health_articles = get_articles('health')
+#     education_articles = get_articles('technology')
+#     return render_template('articles.html',health=health_articles, tech =education_articles)
+
+# @main.route('/search/<article_name>')
+# def articleSearch(article_name):
+#     """
+#     function that returns the searched articles
+#     """
+#     search_article_name = article_name.split("")
+#     search_name_format = "+".join(search_article_name)
+#     searched_articles = search_articles(search_name_format)
+
+#     return render_template('search.html',articles = searched_articles)
+
 
 
 

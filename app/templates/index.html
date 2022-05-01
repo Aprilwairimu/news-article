@@ -1,34 +1,14 @@
 {% extends 'base.html'%}
-{% import 'macros.html' as macro%}
-
-
-
-
-    {% block content %}
-
-    <div class="container">
-        <!-- General News -->
-        <h3> General News</h3>
-        <ul>
-            {{ macro.display_new_sources(General)}}
-        </ul>
-        <!--  Business News -->
-        <h3> Business News </h3>
-        <ul>
-            {{ macro.display_new_sources(Business)}}
-        </ul>
-        <!--Business News -->
-        <h3>Political News</h3>
-        <ul>
-            {{ macro.display_new_sources(Political)}}
-        </ul>
-
-        <!-- <form>
-            <input type="text" name="news_query" placeholder="Search for a News" class="form-control">
-            <input type="submit" value="Submit" class="btn btn-default">
-        </form> -->
-
+{% import 'macros.html' as macro %}{% block styles%}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+{% endblock %}{% block content %}
+<div class="container-fluid" id="allsources">
+    <div class="overlay">
+        <h2 class="text-center font-weight-bold headers">General News</h2>
+        {{ macro.display_new_sources(general) }} <h2 class="text-center font-weight-bold headers"> Business News</h2>
+        {{ macro.display_new_sources(business) }}
+        <h2 class="text-center font-weight-bold headers"> Sports news </h2>
+        {{ macro.display_new_sources(sports) }}
     </div>
-
-   
-    {% endblock%}
+</div>{% endblock %}
