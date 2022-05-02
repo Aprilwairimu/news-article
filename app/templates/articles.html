@@ -3,11 +3,11 @@
 
 {% block styles%}
 {{ super() }}
-<link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+<!-- <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}"> -->
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid" id="allsources display-flex">
+<div class="container-fluid" id="allsources">
     <div class="overlay container-fluid">
         <h2 class="text-center headers">Technology Articles</h2>
         {{macro.display_new_articles(tech)}}

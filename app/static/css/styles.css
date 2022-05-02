@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+body{
+    background-image: url(../images/shape.png);
+}
+.nav li{
+    display: inline-block;
+    padding: 0 50px;
+}
+#allsources {
+   
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#sourcename{
+    font-weight: bold;
+}
+.row{
+    font-size: 20px;
+    font-weight: bold;
+}
+.overlay {
+    width: 100%;
+    padding-top: 1%;
+}
+   
