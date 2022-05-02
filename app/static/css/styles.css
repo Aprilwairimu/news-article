@@ -4,18 +4,28 @@
     font-family: "Roboto", sans-serif;
 }
 body{
-    background-image: url(../images/shape.png);
+    background-image: url(../images/back.jpg);
+    color: white;
+    background-repeat: no-repeat;
+    
 }
 .nav li{
     display: inline-block;
     padding: 0 50px;
 }
-#allsources {
-   
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.page1{
+    display: flex;
+    margin: 10 10px;
+    padding: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+
+}
+.page2{
+    height: auto;
+    width: 20%;
 }
 #sourcename{
     font-weight: bold;
