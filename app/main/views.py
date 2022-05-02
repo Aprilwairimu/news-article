@@ -16,9 +16,9 @@ def index():
     # Getting popular news
     general_news = get_sources('general')
     business_news = get_sources('business')
-    political_news = get_sources('political')
+    sports_news = get_sources('sports')
 
-    return render_template('index.html', general = general_news,business = business_news,politics = political_news )
+    return render_template('index.html', general = general_news,business = business_news,sports = sports_news )
     
 @main.route('/articles/<id>')
 def sourceArticles(id):

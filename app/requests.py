@@ -20,7 +20,7 @@ def get_sources(category):
     """
     function that gets response from the api call
     """
-    sources_url =s_url.format(category,api_key)
+    sources_url = s_url.format(category,api_key)
     with urllib.request.urlopen(sources_url) as url:
 
         sources_data = url.read()
