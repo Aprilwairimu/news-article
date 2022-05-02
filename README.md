@@ -2,7 +2,8 @@
 
 ## PROJECT PREVIEW
 
-![NEWS ARTICLE APP](src/assets/project%20sreenshot/Screenshot%201.png)
+![NEWS ARTICLE APP](./app/static/images/Screenshot%20A.png)
+![NEWS ARTICLE APP](./app/static/images/Screenshot%20from%20B.png)
 
 
 ### PROJECT DESCRIPTION
