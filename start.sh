@@ -1,4 +1,4 @@
-export NEWS_API_KEY = 0ae0a11c29574d3088c9422df5fad23b
-export SECRET_KEY = kisha
+export NEWS_API_KEY=42884a3d56674f8582af7372cf5f50bb
+export SECRET_KEY=kisha
 python3.9 manage.py server
 

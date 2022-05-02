@@ -7,7 +7,15 @@
 
 ### PROJECT DESCRIPTION
 
-News Article App is a python application that will help us list and preview news articles from various sources.   
+News Article App is a python application that will help us list and preview news articles from various sources.
+
+
+### :pushpin:PROJECT SETUP INSTRUCTIONS
+
+- Open terminal {Ctrl +Alt + T}
+- git clone https://github.com/Aprilwairimu/news-article.git
+- cd password-locker
+- code . or atom . depending on your text editor
 
 ### :information_desk_person: AUTHOR'S INFORMATION
 
@@ -16,6 +24,7 @@ Am April wairimu a young growing developer
 ### NAME OF CONTRIBUTORS
 
 The project was done as an individual.
+
 
 ### :pushpin: TECHNOLOGY USED
 
@@ -27,15 +36,13 @@ The technologies are ;
 
 :small_blue_diamond: FLASK
 
-:small_blue_diamond: PYTHON
+:small_blue_diamond: PYTHON3.9
 
-### LINK TO VIEW SITE
-
-https://github.com/Aprilwairimu/news-article.git
+:small_blue_diamond: HEROKU
 
 ### :telephone_receiver: CONTANCT INFORMATION
 
-Find me at wairimuapril@gmail.
+For any questions or contributions Email me at wairimuapril@gmail.
 
 ### CREATED
 
@@ -43,4 +50,4 @@ Find me at wairimuapril@gmail.
 
 ## LICENCE AND COPYRIGHT
 
-MIT Copyright (c) 2019 April Wairimu
+MIT Copyright (c) 2022 April Wairimu
