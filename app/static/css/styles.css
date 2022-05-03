@@ -6,7 +6,7 @@
 body{
     background-image: url(../images/back.jpg);
     color: white;
-    background-repeat: no-repeat;
+    height: auto;
     
 }
 .nav li{
@@ -37,5 +37,16 @@ body{
 .overlay {
     width: 100%;
     padding-top: 1%;
+}
+.header{
+    font-size: 50px;
+    font-weight: bold;
+    font-style: oblique;
+    font-family: 'Times New Roman', Times, serif;
+}
+.headers{
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Times New Roman',Times,serif;
 }
    
