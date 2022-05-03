@@ -5,7 +5,7 @@
             <div class="card-columns page1">
                 {% for news in sources_outcome %}
                 <div class="card sourcecard page2">
-                    <div class="card-header" id="sourcename">
+                    <div class="card-header " id="sourcename">
                         <h4><a href="/articles/{{news.id}}">{{news.name}}</a></h4>
                     </div>
                     <div class="card-body">
@@ -25,7 +25,7 @@
 </div>
 {% endmacro %}
 {% macro display_new_articles(articles_outcome) %}
-<div class="container-fluid">
+<div class="container-fluid  img">
     <div class="card-columns">
         {% for article in articles_outcome %}
         <div class="card">

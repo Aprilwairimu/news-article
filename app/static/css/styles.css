@@ -6,13 +6,15 @@
 body{
     background-image: url(../images/back.jpg);
     color: white;
-    height: auto;
-    
 }
+
+/* navbar.html */
 .nav li{
     display: inline-block;
     padding: 0 50px;
 }
+
+/* macros.html */
 .page1{
     display: flex;
     margin: 10 10px;
@@ -21,32 +23,31 @@ body{
     flex-wrap: wrap;
     justify-content: space-around;
 
-
 }
 .page2{
     height: auto;
     width: 20%;
 }
-#sourcename{
-    font-weight: bold;
-}
-.row{
-    font-size: 20px;
-    font-weight: bold;
-}
-.overlay {
-    width: 100%;
-    padding-top: 1%;
-}
-.header{
-    font-size: 50px;
+
+/* articles.html */
+.title1{
+    font-size: 60px;
     font-weight: bold;
     font-style: oblique;
-    font-family: 'Times New Roman', Times, serif;
-}
-.headers{
-    font-size: 50px;
-    font-weight: bold;
     font-family: 'Times New Roman',Times,serif;
 }
-   
+
+/* index.html */
+.content{
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Times New Roman',Times,serif;
+    margin-bottom: 16px;
+}
+.title2{
+    font-size: 80px;
+    font-weight: bold;
+    font-family: 'Times New Roman',Times,serif;
+    font-style: oblique;
+}
+
